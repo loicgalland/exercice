@@ -1,0 +1,26 @@
+[
+    {
+        "id" : 1,
+        "name" : "Hotel Good",
+        "descritpion" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "note" : 3
+    },
+    {
+        "id" : 2,
+        "name" : "Eastern Hotel",
+        "descritpion" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "note" : 2
+    },
+    {
+        "id" : 3,
+        "name" : "Forest Hotel",
+        "descritpion" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "note" : 4
+    },
+    {
+        "id" : 4,
+        "name" : "Zoo Hotel",
+        "descritpion" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "note" : 3
+    }
+]
