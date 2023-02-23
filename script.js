@@ -1,6 +1,27 @@
 const response = await fetch("https://jsonplaceholder.typicode.com/albums");
 const establishments = await response.json();
 
+function createCardTitle(hotel){
+    const hotelName = document.createElement('h1');
+    hotelName.innerText = hotel.id;
+    hotelName.classList.add('card-title');
+    return hotelName;
+}
+
+function createCardDescritpion(hotel){
+    const hotelDescription = document.createElement('p');
+    hotelDescription.innerText = hotel.title;
+    hotelDescription.classList.add('card-text');      
+    return hotelDescription;
+}
+
+function createCardNote(hotel){
+    const hotelButton = document.createElement('button');
+    hotelButton.innerText = hotel.userId;
+    hotelButton.classList.add('btn', 'btn-primary');
+    return hotelButton;
+}
+    
 function createCardImage(){
     const hotelImage = document.createElement('img');
     hotelImage.src = 'https://picsum.photos/100/100';
@@ -24,34 +45,13 @@ for (let i = 0; i < establishments.length; i++) {
     const bodyHotelCard = document.createElement("div");
     bodyHotelCard.classList.add('card-body');
 
-    function createCardTitle(){
-        const hotelName = document.createElement('h1');
-        hotelName.innerText = hotel.id;
-        hotelName.classList.add('card-title');
-        return hotelName;
-        }
-
-    function createCardDescritpion(){
-    const hotelDescription = document.createElement('p');
-    hotelDescription.innerText = hotel.title;
-    hotelDescription.classList.add('card-text');      
-    return hotelDescription;
-    }
-
-    function createCardNote(){
-    const hotelButton = document.createElement('button');
-    hotelButton.innerText = hotel.userId;
-    hotelButton.classList.add('btn', 'btn-primary');
-    return hotelButton;
-    }
-
     selectHotelCardRow().appendChild(hotelContainer);
     hotelContainer.appendChild(hotelCard);
-    hotelCard.appendChild(createCardImage(i));
+    hotelCard.appendChild(createCardImage());
     hotelCard.appendChild(bodyHotelCard);
-    bodyHotelCard.appendChild(createCardTitle());
-    bodyHotelCard.appendChild(createCardDescritpion());
-    bodyHotelCard.appendChild(createCardNote());
+    bodyHotelCard.appendChild(createCardTitle(hotel));
+    bodyHotelCard.appendChild(createCardDescritpion(hotel));
+    bodyHotelCard.appendChild(createCardNote(hotel));
 }
     
 
