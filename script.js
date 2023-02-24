@@ -51,8 +51,7 @@ function createCardBody(){
 }
 
 function generateHotel(){
-    for (let i = 0; i < establishments.length; i++) {
-        const hotel = establishments[i];
+    establishments.forEach(element => {
         const hotelContainer = createCardContainer(); 
         const hotelCard = createCard();
         const bodyHotelCard = createCardBody();
@@ -61,14 +60,14 @@ function generateHotel(){
         hotelContainer.appendChild(hotelCard);
         hotelCard.appendChild(createCardImage());
         hotelCard.appendChild(bodyHotelCard);
-        bodyHotelCard.appendChild(createCardTitle(hotel.id));
-        bodyHotelCard.appendChild(createCardDescription(hotel.title));
-        bodyHotelCard.appendChild(createCardNote(hotel.userId));
-    }
+        bodyHotelCard.appendChild(createCardTitle(element.id));
+        bodyHotelCard.appendChild(createCardDescription(element.title));
+        bodyHotelCard.appendChild(createCardNote(element.userId));
+    });
 }
 
 generateHotel();
-    
+
 const inputSearchBar = document.querySelector("#search-bar");
 const inputValidCheckedBar = document.querySelector("#valid-check-bar");
 
