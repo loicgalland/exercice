@@ -87,17 +87,20 @@ inputAnnulCheckBar.addEventListener("click", function(){
 })
 
 // Fonction qui ajoute un hotel à la liste (Marche pas 😞)
-function addHotel(){
+function addNewHotel(){
     const hotelForm = document.querySelector(".form-add-hotel")
-    const hotelFormBtn = document.querySelector(".save-hotel-btn")
-    hotelForm.addEventListener("submit", function (event){
+    hotelForm.addEventListener("submit", function(event){
         event.preventDefault()
-        const hotel = {
-            usedId: parseInt(event.target.querySelector("name=hotel-name").value),
-            title: parseInt(event.target.querySelector("name=hotel-description").value),
+        const hotel ={
+            id: event.target.querySelector("[name=hotel-id").value,
+            title: event.target.querySelector("[name=hotel-description").value,
         }
         establishments.unshift(hotel)
-        generateHotel(establishments)
+        addNewHotel()
+        generateHotel()
     })
 }
 
+
+
+console.log(establishments)
