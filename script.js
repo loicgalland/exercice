@@ -50,8 +50,9 @@ function createCardBody(){
     return bodyHotelCard;
 }
 
-function generateHotel(){
-    establishments.forEach(element => {
+function generateHotel(establishments){
+    selectHotelCardRow().innerHTML = ""
+    establishments.forEach(establishment => {
         const hotelContainer = createCardContainer(); 
         const hotelCard = createCard();
         const bodyHotelCard = createCardBody();
@@ -60,22 +61,43 @@ function generateHotel(){
         hotelContainer.appendChild(hotelCard);
         hotelCard.appendChild(createCardImage());
         hotelCard.appendChild(bodyHotelCard);
-        bodyHotelCard.appendChild(createCardTitle(element.id));
-        bodyHotelCard.appendChild(createCardDescription(element.title));
-        bodyHotelCard.appendChild(createCardNote(element.userId));
+        bodyHotelCard.appendChild(createCardTitle(establishment.id));
+        bodyHotelCard.appendChild(createCardDescription(establishment.title));
+        bodyHotelCard.appendChild(createCardNote(establishment.userId));
     });
 }
 
-generateHotel();
+generateHotel(establishments);
 
-const inputSearchBar = document.querySelector("#search-bar");
-const inputValidCheckedBar = document.querySelector("#valid-check-bar");
-
-const hotelIWant = inputSearchBar.value;
-inputValidCheckedBar.addEventListener("click", function(hotelIWant){
+// Recherche via input 
+const inputValidCheckedBar = document.querySelector(".valid-check-bar")
+inputValidCheckedBar.addEventListener("click", function(){
+    const inputSearchBar = document.querySelector(".search-bar")
+    const hotelIWant = inputSearchBar.value
     const filtredHotels = establishments.filter(function(establishments){
-        return establishments.id = hotelIWant;
+        return establishments.title.indexOf(hotelIWant) !== -1
     })
+    generateHotel(filtredHotels)
 })
-    
-    
+
+// Refresh de la page  
+const inputAnnulCheckBar = document.querySelector(".annul-check-bar")
+inputAnnulCheckBar.addEventListener("click", function(){
+    generateHotel(establishments)
+})
+
+// Fonction qui ajoute un hotel à la liste (Marche pas 😞)
+function addHotel(){
+    const hotelForm = document.querySelector(".form-add-hotel")
+    const hotelFormBtn = document.querySelector(".save-hotel-btn")
+    hotelForm.addEventListener("submit", function (event){
+        event.preventDefault()
+        const hotel = {
+            usedId: parseInt(event.target.querySelector("name=hotel-name").value),
+            title: parseInt(event.target.querySelector("name=hotel-description").value),
+        }
+        establishments.unshift(hotel)
+        generateHotel(establishments)
+    })
+}
+
