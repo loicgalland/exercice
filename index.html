@@ -16,14 +16,15 @@
                 <input class="form-control me-2 search-bar" type="search" placeholder="Search" aria-label="Search" >
                 <button class="btn btn-outline-primary valid-check-bar" type="button">Search</button>
                 <button class="btn btn-outline-primary ms-2 annul-check-bar" type="button">Refresh</button>
-                <button type="button" class="btn btn-primary ms-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <button type="button" class="btn btn-primary ms-2" data-bs-toggle="modal" data-bs-target="#exampleModal1">
                   Add
                 </button>
+                <button type="button" class="btn btn-outline-primary ms-2" data-bs-toggle="modal" data-bs-target="#exampleModal2">Delete</button>
               </form>
             </div>
           </nav>
     </div>
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -44,13 +45,28 @@
                 <label for="hotel-descritpion" class="form-label">Add an image</label>
                 <input type="url" class="form-control" placeholder="https://picsum.photos/100/100">
               </div>  
-              <button type="submit" class="btn btn-primary save-hotel-btn">Save</button>
+              <button type="submit" class="btn btn-primary save-hotel-btn" data-bs-dismiss="modal">Save</button>
             </form>
+        </div>  
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Add my hotel</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            
-          </div>
+          <div class="modal-body">
+            <form action="#" class="form-add-hotel">
+              <div class="form-group mb-3">
+                <label for="hotel-name" class="form-label">Hotel name</label>
+                <input type="text" placeholder="Name" class="w-100 form-control" id="hotel-to-delete-name" name="hotel-to-delete-id">
+              </div>
+              <button type="submit" class="btn btn-primary delete-hotel-btn" data-bs-dismiss="modal">Delete</button>
+            </form>
+        </div>  
         </div>
       </div>
     </div>
